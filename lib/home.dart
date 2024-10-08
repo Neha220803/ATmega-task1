@@ -21,7 +21,8 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: datas.isEmpty
           ? const Center(
-              child: CircularProgressIndicator()) // Loading indicator
+              child: Text(
+                  "Click the floating button to view API data")) // Loading indicator
           : ListView.builder(
               itemCount: datas.length,
               itemBuilder: (context, index) {
@@ -33,10 +34,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   subtitle: Text(datas[index]['body']),
                   trailing: Container(
                       color: Colors.blue,
-                      padding: EdgeInsets.all(5.0),
+                      padding: const EdgeInsets.all(5.0),
                       child: Text(
                         'UserId:${datas[index]['userId'].toString()}',
-                        style: TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.white),
                       )),
                 );
               },
